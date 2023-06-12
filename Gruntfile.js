@@ -26,10 +26,7 @@ module.exports = function(grunt) {
         }
       },
       vendors: {
-        src: ['public/src/js/ios-imagefile-megapixel/megapix-image.js', 'public/lib/qrcode-generator/js/qrcode.js', 'public/src/js/jsqrcode/grid.js', 'public/src/js/jsqrcode/version.js', 'public/src/js/jsqrcode/detector.js', 'public/src/js/jsqrcode/formatinf.js', 'public/src/js/jsqrcode/errorlevel.js', 'public/src/js/jsqrcode/bitmat.js', 'public/src/js/jsqrcode/datablock.js', 'public/src/js/jsqrcode/bmparser.js', 'public/src/js/jsqrcode/datamask.js', 'public/src/js/jsqrcode/rsdecoder.js', 'public/src/js/jsqrcode/gf256poly.js', 'public/src/js/jsqrcode/gf256.js', 'public/src/js/jsqrcode/decoder.js', 'public/src/js/jsqrcode/qrcode.js', 'public/src/js/jsqrcode/findpat.js', 'public/src/js/jsqrcode/alignpat.js', 'public/src/js/jsqrcode/databr.js', 'public/lib/moment/min/moment.min.js', 'public/lib/moment/lang/es.js', 'public/lib/zeroclipboard/ZeroClipboard.min.js',
-          'public/lib/c3/c3.min.js',
-          'public/lib/d3/d3.min.js'
-        ],
+        src: ['public/src/js/ios-imagefile-megapixel/megapix-image.js', 'public/lib/qrcode-generator/js/qrcode.js', 'public/src/js/jsqrcode/grid.js', 'public/src/js/jsqrcode/version.js', 'public/src/js/jsqrcode/detector.js', 'public/src/js/jsqrcode/formatinf.js', 'public/src/js/jsqrcode/errorlevel.js', 'public/src/js/jsqrcode/bitmat.js', 'public/src/js/jsqrcode/datablock.js', 'public/src/js/jsqrcode/bmparser.js', 'public/src/js/jsqrcode/datamask.js', 'public/src/js/jsqrcode/rsdecoder.js', 'public/src/js/jsqrcode/gf256poly.js', 'public/src/js/jsqrcode/gf256.js', 'public/src/js/jsqrcode/decoder.js', 'public/src/js/jsqrcode/qrcode.js', 'public/src/js/jsqrcode/findpat.js', 'public/src/js/jsqrcode/alignpat.js', 'public/src/js/jsqrcode/databr.js', 'public/lib/momentjs/min/moment.min.js', 'public/lib/moment/lang/es.js', 'public/lib/zeroclipboard/ZeroClipboard.min.js'],
         dest: 'public/js/vendors.js'
       },
       angular: {
@@ -38,14 +35,10 @@ module.exports = function(grunt) {
       },
       main: {
         src: ['public/src/js/app.js', 'public/src/js/controllers/*.js', 'public/src/js/services/*.js', 'public/src/js/directives.js', 'public/src/js/filters.js', 'public/src/js/config.js', 'public/src/js/init.js', 'public/src/js/translations.js'],
-        dest: 'public/js/main.js'
+        dest: 'public/js/main.min.js'
       },
       css: {
-        src: [
-          'public/lib/bootstrap/dist/css/bootstrap.min.css',
-          'public/lib/c3/c3.min.css',
-          'public/src/css/**/*.css'
-        ],
+        src: ['public/lib/bootstrap/dist/css/bootstrap.min.css', 'public/src/css/**/*.css'],
         dest: 'public/css/main.css'
       }
     },
@@ -62,10 +55,10 @@ module.exports = function(grunt) {
         src: 'public/js/angularjs-all.js',
         dest: 'public/js/angularjs-all.min.js'
       },
-      main: {
-        src: 'public/js/main.js',
-        dest: 'public/js/main.min.js'
-      }
+      // main: {
+      //   src: 'public/js/main.js',
+      //   dest: 'public/js/main.min.js'
+      // }
     },
     cssmin: {
       css: {

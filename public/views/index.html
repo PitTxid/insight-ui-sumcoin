@@ -52,7 +52,7 @@
             <td>
               <a class="ellipsis" href="tx/{{tx.txid}}">{{tx.txid}}</a>
             </td>
-            <td class="text-right"><span class="ellipsis">{{$root.currency.getConvertion(tx.valueOut)}}</span></td>
+            <td class="text-right"><span class="ellipsis">{{$root.currency.getConvertion(tx.valueOut) || tx.valueOut + ' SUM'}}</span></td>
           </tr>
           </tbody>
         </table>
@@ -60,16 +60,18 @@
       </div>
 
       <div class="col-xs-12 col-md-4 col-gray">
-        <h2><img style="max-height: 89px; display: block; margin-left: auto; margin-right: auto; padding-bottom: 10px;" src="../../img/explorer_header.png" class="brand-logo"></h2>
-        <p style="text-align: center;" translate>Visit our official website <a href="https://tent.app/">tent.app</a></p>
+        <h2 translate>About</h2>
+        <p translate><strong>insight</strong>  is an <a href="https://insight.is/"
+          target="_blank">open-source Sumcoin blockchain explorer</a> with complete REST and websocket APIs that can be used for writing web wallets and other apps  that need more advanced blockchain queries than provided by sumcoind RPC.  Check out the <a href="https://github.com/bitpay/insight-ui" target="_blank">source code</a>.</p>
+        <p translate><strong>insight</strong> is still in development, so be sure to report any bugs and provide feedback for improvement at our <a href="https://github.com/bitpay/insight-ui/issues" target="_blank">github issue tracker</a>.</p>
         <div id="powered" class="row">
           <div class="powered-text">
-            <small class="text-muted" translate>TENT Community</small>
+            <small class="text-muted" translate>Powered by</small>
           </div>
-          <a href="https://bitcointalk.org/index.php?topic=2630198" class="bitcointalk" target="_blank" title="BitcoinTalk"></a>
-          <a href="https://github.com/gemlink/TENT" class="github" target="_blank" title="GitHub"></a>
-          <a href="https://twitter.com/tentpay" class="twitter" target="_blank" title="Twitter"></a>
-          <a href="https://discord.gg/78rVJcH" class="discord" target="_blank" title="Discord"></a>
+          <a href="http://bitcore.io" target="_blank" class="bitcore" title="Bitcore"></a>
+          <a href="http://angularjs.org" target="_blank" class="angularjs" title="AngularJS"></a>
+          <a href="https://code.google.com/p/leveldb/" target="_blank" class="leveldb" title="LevelDB"></a>
+          <a href="http://nodejs.org" target="_blank" class="nodejs" title="NodeJs"></a>
         </div>
       </div> <!-- END OF COL-3 -->
     </div>

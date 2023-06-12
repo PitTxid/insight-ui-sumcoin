@@ -23,6 +23,7 @@ function($scope, $rootScope, $routeParams, $location, Global, Transaction, Trans
 
       var notAddr = false;
       // non standard input
+      console.log("item", items[i]);
       if (items[i].scriptSig && !items[i].addr) {
         items[i].addr = 'Unparsed address [' + u++ + ']';
         items[i].notAddr = true;
@@ -47,7 +48,7 @@ function($scope, $rootScope, $routeParams, $location, Global, Transaction, Trans
 
       if (!tmp[addr]) {
         tmp[addr] = {};
-        tmp[addr].valueZat = 0;
+        tmp[addr].valueSat = 0;
         tmp[addr].count = 0;
         tmp[addr].addr = addr;
         tmp[addr].items = [];
@@ -57,7 +58,7 @@ function($scope, $rootScope, $routeParams, $location, Global, Transaction, Trans
       tmp[addr].doubleSpentTxID = tmp[addr].doubleSpentTxID   || items[i].doubleSpentTxID;
       tmp[addr].doubleSpentIndex = tmp[addr].doubleSpentIndex || items[i].doubleSpentIndex;
       tmp[addr].dbError = tmp[addr].dbError || items[i].dbError;
-      tmp[addr].valueZat += Math.round(items[i].value * COIN);
+      tmp[addr].valueSat += Math.round(items[i].value * COIN);
       tmp[addr].items.push(items[i]);
       tmp[addr].notAddr = notAddr;
 
@@ -68,7 +69,7 @@ function($scope, $rootScope, $routeParams, $location, Global, Transaction, Trans
     }
 
     angular.forEach(tmp, function(v) {
-      v.value    = v.value || parseInt(v.valueZat) / COIN;
+      v.value    = v.value || parseInt(v.valueSat) / COIN;
       ret.push(v);
     });
     return ret;

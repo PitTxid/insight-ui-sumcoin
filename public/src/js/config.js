@@ -5,7 +5,7 @@ angular.module('insight').config(function($routeProvider) {
   $routeProvider.
     when('/block/:blockHash', {
       templateUrl: 'views/block.html',
-      title: 'TENT Block '
+      title: 'Sumcoin Block '
     }).
     when('/block-index/:blockHeight', {
       controller: 'BlocksController',
@@ -17,27 +17,23 @@ angular.module('insight').config(function($routeProvider) {
     }).
     when('/tx/:txId/:v_type?/:v_index?', {
       templateUrl: 'views/transaction.html',
-      title: 'TENT Transaction '
+      title: 'Sumcoin Transaction '
     }).
     when('/', {
       templateUrl: 'views/index.html',
-      title: 'TENT Block Explorer'
+      title: 'Home'
     }).
     when('/blocks', {
       templateUrl: 'views/block_list.html',
-      title: 'TENT Blocks solved Today'
+      title: 'Sumcoin Blocks solved Today'
     }).
     when('/blocks-date/:blockDate/:startTimestamp?', {
       templateUrl: 'views/block_list.html',
-      title: 'TENT Blocks solved '
+      title: 'Sumcoin Blocks solved '
     }).
     when('/address/:addrStr', {
       templateUrl: 'views/address.html',
-      title: 'TENT Address '
-    }).
-    when('/charts/:chartType?', {
-      templateUrl: 'views/charts.html',
-      title: 'Charts'
+      title: 'Sumcoin Address '
     }).
     when('/status', {
       templateUrl: 'views/status.html',
